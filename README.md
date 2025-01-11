@@ -10,7 +10,7 @@ This chatbot is taken from the book [Artificial Intelligence for Developers](htt
 
 ### Running this chatbot on your machine
 
-I would recommend using a virtual environment. Python's venv is a good choise
+I would recommend using a virtual environment. Python's venv is a good choice.
 
 ```bash
     python -m venv /venv-name-of-your-choice
