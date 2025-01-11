@@ -17,6 +17,8 @@ conversions = {
     'yourself': 'myself'
 }
 
+rules = {}
+
 def transform(text):
     return map(lambda x: conversions[x] if x in conversions else x, text)
 
@@ -59,12 +61,28 @@ def matchPattern(pattern, text):
         
     return True, matches
 
-while(True):
-    text = input('? ')
-    if len(text) == 0:
-        break
+# while(True):
+#     text = input('? ')
+#     if len(text) == 0:
+#         break
 
-    # Do something with the text
+#     # Do something with the text
 
-    for clause in splitClauses(text):
-        print(splitWords(clause))
+#     for clause in splitClauses(text):
+#         print(splitWords(clause))
+
+def testPatterns():
+    print(matchWildCard('stop', ['stop']))
+    print(matchWildCard('stop', ['stop', 'now']))
+    print(matchWildCard('stop', ['I', 'stop', 'now']))
+    print(matchWildCard('stop', ['I', 'can', 'stop']))
+    print(matchWildCard('stop', ['I', 'can', 'stop', 'now']))
+    print(matchWildCard('stop', ['I', 'can', 'finish', 'now']))
+    print(matchPattern([0, 'stop', 0], ['stop']))
+    print(matchPattern([0, 'stop', 0], ['stop', 'now']))
+    print(matchPattern([0, 'stop', 0], ['I', 'stop', 'now']))
+    print(matchPattern([0, 'stop', 0], ['I', 'can', 'stop']))
+    print(matchPattern([0, 'stop', 0], ['I', 'can', 'stop', 'now']))
+    print(matchPattern([0, 'stop', 0], ['I', 'can', 'finish', 'now']))
+
+testPatterns()
